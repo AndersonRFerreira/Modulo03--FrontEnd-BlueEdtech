@@ -1,0 +1,99 @@
+body{
+    overflow-x:hidden;
+    background-color: rgb(243, 242, 242);
+}
+
+div#principal{
+    width: 1400px;
+}
+
+div#principal div#facebook{
+    width:1300px;
+}
+
+div#principal div#facebook h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(36, 104, 231);
+    font-size: 40pt;
+    margin-top:200px;
+    margin-left: 150px;
+}
+
+div#principal div#facebook h2{
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:28px;
+    margin-left: 150px;
+    margin-top: -20px;
+    font-weight: normal;
+    line-height: 32px;
+    width: 500px;
+}
+
+div#principal div#facebook div#criar{
+    float: right;
+    margin-top: -120px;
+    margin-right: 150px;
+    display: block;
+    text-align: center;
+    background-color:white;
+    width:340.16px;
+    height:309.92px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.377);
+    border-radius: 1%;
+}
+
+input#email{
+    width: 302.36px;
+    height:49.13px;
+    font-size:17px;
+    border-radius: 6px;
+    border: solid 1px #dddfe2;
+    margin-top: 17px;
+}
+
+input#senha{
+    width: 302.36px;
+    height:49.13px;
+    font-size:17px;
+    border-radius: 6px;
+    border: solid 1px #dddfe2;
+    margin-top: 12px;
+}
+input#entrar{
+    width: 302.36px;
+    height:49.13px;
+    font-size:20px;
+    border-radius: 6px;
+    border: solid 0.5px rgba(0, 0, 0.438);
+    background-color:#1877f2;
+    border: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 12px;
+}
+
+p{
+    color: #1877f2;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: solid 1px #dddfe2;
+}
+
+input#criar{
+    background-color:rgb(8, 197, 8);
+    border: none;
+    border-radius: 3%;
+    color: white;
+    width:139.84px;
+    height:49.13px;
+    font-size:16px;
+}
+
+p#span{
+    color: black;
+    float: right;
+    margin-top: 200px;
+    margin-right: -380px;
+    font-size: 14px;
+
+}
