@@ -1,0 +1,147 @@
+$fonte-principal: 'Poppins', sans-serif;
+$fonte-secundaria: 'Londrina Solid', cursive;
+$--grass: #1fc435;
+$--poison: #6b137c;
+$--fire: #e4652a;
+$--flying: #1ba7df;
+$--water: #191375;
+$--bug: #237523;
+$--normal: #085d48;
+$--electric: #cedf34;
+$--ground: #b95e29;
+$--fairy: #bf58cf;
+$--fighting: #363f06;
+$--psychic: #000000;
+$--rock: #462b20;
+$--steel: #867a88;
+$--ice: #777edf;
+$--ghost: #43114b;
+$--dragon: #e7671e;
+
+@mixin centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin tema($cor) {
+  background-color: $cor;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fonte-principal;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  @include centralizar;
+
+  
+
+  &__list {
+    width: 90%;
+    margin: auto 0;
+    @include centralizar;
+    flex-wrap: wrap;
+
+    &__card {
+      width: 12rem;
+      height: 18rem;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+      &__link {
+        text-decoration: none;
+        color: #000000;
+      }
+
+      &__img {
+        width: 100%;
+      }
+
+      &__button {
+        color: #ffffff;
+        border-radius: 0.4rem;
+        padding: 0.2rem 0.4rem;
+        margin: 0 0.4rem 0 0;
+
+        &--grass {
+          @include tema($--grass)
+        }
+
+        &--poison {
+          @include tema($--poison)
+        }
+
+        &--fire {
+          @include tema($--fire)
+        }
+
+        &--flying {
+          @include tema($--flying)
+        }
+
+        &--water {
+          @include tema($--water)
+        }
+
+        &--bug {
+          @include tema($--bug)
+        }
+
+        &--normal {
+          @include tema($--normal)
+        }
+
+        &--electric {
+          @include tema($--electric)
+        }
+
+        &--ground {
+          @include tema($--ground)
+        }
+
+        &--fairy {
+          @include tema($--fairy)
+        }
+
+        &--fighting {
+          @include tema($--fighting)
+        }
+
+        &--psychic {
+          @include tema($--psychic)
+        }
+
+        &--rock {
+          @include tema($--rock)
+        }
+
+        &--steel {
+          @include tema($--steel)
+        }
+
+        &--ice {
+          @include tema($--ice)
+        }
+
+        &--ghost {
+          @include tema($--ghost)
+        }
+
+        &--dragon {
+          @include tema($--dragon)
+        }
+      }
+    }
+  }
+}
