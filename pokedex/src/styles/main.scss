@@ -2,7 +2,7 @@ $fonte-principal: 'Poppins', sans-serif;
 $fonte-secundaria: 'Londrina Solid', cursive;
 $--grass: #1fc435;
 $--poison: #6b137c;
-$--fire: #e4652a;
+$--fire: #e42a2a;
 $--flying: #1ba7df;
 $--water: #191375;
 $--bug: #237523;
@@ -41,15 +41,61 @@ body {
 .app {
   width: 100vw;
   height: 100vh;
-  @include centralizar;
-
-  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0;
 
   &__list {
     width: 90%;
-    margin: auto 0;
+    margin: 6rem 0;
     @include centralizar;
     flex-wrap: wrap;
+
+    &__searchbox {
+      background-color: #208091;
+      width: 100vw;
+      position: fixed;
+      align-items: center;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      z-index: 1;
+
+      &__container {
+        width: 80%;
+        height: 5rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content:space-evenly;
+      
+        img {
+          width: 10rem;
+        }
+
+        input {
+          font-size: 1.5em;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          border: none;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        button {
+          background-color: #ebdb50;
+          padding: 0.5rem 1rem;
+          font-size: 1.5em;
+          border-radius: 0.5rem;
+          border: none;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          cursor: pointer;
+          
+          a {
+            text-decoration: none;
+            color: #000000;
+          }
+        }
+      }
+    }
 
     &__card {
       width: 12rem;
@@ -58,6 +104,15 @@ body {
       margin: 1rem;
       border-radius: 0.5rem;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      transition: 0.5s;
+      background-color: #bde673;
+      ;
+
+      &__id {
+        font-weight: 100;
+        letter-spacing: 0.1em;
+        color: #867a88;
+      }
 
       &__link {
         text-decoration: none;
@@ -68,80 +123,302 @@ body {
         width: 100%;
       }
 
-      &__button {
-        color: #ffffff;
-        border-radius: 0.4rem;
-        padding: 0.2rem 0.4rem;
-        margin: 0 0.4rem 0 0;
+      &__category {
+        padding: 0.5rem 0;
 
-        &--grass {
-          @include tema($--grass)
+        a {
+          text-decoration: none;
         }
 
-        &--poison {
-          @include tema($--poison)
-        }
-
-        &--fire {
-          @include tema($--fire)
-        }
-
-        &--flying {
-          @include tema($--flying)
-        }
-
-        &--water {
-          @include tema($--water)
-        }
-
-        &--bug {
-          @include tema($--bug)
-        }
-
-        &--normal {
-          @include tema($--normal)
-        }
-
-        &--electric {
-          @include tema($--electric)
-        }
-
-        &--ground {
-          @include tema($--ground)
-        }
-
-        &--fairy {
-          @include tema($--fairy)
-        }
-
-        &--fighting {
-          @include tema($--fighting)
-        }
-
-        &--psychic {
-          @include tema($--psychic)
-        }
-
-        &--rock {
-          @include tema($--rock)
-        }
-
-        &--steel {
-          @include tema($--steel)
-        }
-
-        &--ice {
-          @include tema($--ice)
-        }
-
-        &--ghost {
-          @include tema($--ghost)
-        }
-
-        &--dragon {
-          @include tema($--dragon)
-        }
+        &__button {
+          color: #ffffff;
+          border-radius: 0.4rem;
+          padding: 0.2rem 0.4rem;
+          margin: 0 0.4rem 0 0;
+  
+          &--grass {
+            @include tema($--grass)
+          }
+  
+          &--poison {
+            @include tema($--poison)
+          }
+  
+          &--fire {
+            @include tema($--fire)
+          }
+  
+          &--flying {
+            @include tema($--flying)
+          }
+  
+          &--water {
+            @include tema($--water)
+          }
+  
+          &--bug {
+            @include tema($--bug)
+          }
+  
+          &--normal {
+            @include tema($--normal)
+          }
+  
+          &--electric {
+            @include tema($--electric)
+          }
+  
+          &--ground {
+            @include tema($--ground)
+          }
+  
+          &--fairy {
+            @include tema($--fairy)
+          }
+  
+          &--fighting {
+            @include tema($--fighting)
+          }
+  
+          &--psychic {
+            @include tema($--psychic)
+          }
+  
+          &--rock {
+            @include tema($--rock)
+          }
+  
+          &--steel {
+            @include tema($--steel)
+          }
+  
+          &--ice {
+            @include tema($--ice)
+          }
+  
+          &--ghost {
+            @include tema($--ghost)
+          }
+  
+          &--dragon {
+            @include tema($--dragon)
+          }
+        } 
       }
+    }
+
+    &__card:hover {
+      opacity: 0.9;
+      margin-top: -0.1rem;
+    }
+  }
+
+  .container {
+    width: 60%;
+    height: 90%;
+  }
+
+  .info {
+    @include centralizar;
+    flex-direction: column;
+    
+    &__header {
+      font-size: 1.8em;
+    }
+
+    &__body {
+
+      img {
+        width: 15rem;
+        display: block;
+        margin: 0 auto;
+      }
+
+      &__characteristics {
+        padding: 1rem 0;
+      }
+
+      &__abilities {
+        padding: 1rem 0;
+      }
+
+      &__status {
+        padding: 1rem 0;
+      }
+
+      &__moves {
+        padding: 1rem 0;
+        text-align: justify;
+      }
+
+      &__type {
+        padding: 1rem 0;
+
+        p {
+          padding: 0 0 0.4rem 0;
+        }
+
+        &__button {
+          color: #ffffff;
+          border-radius: 0.4rem;
+          padding: 0.2rem 0.4rem;
+          margin: 0 0.4rem 0 0;
+  
+          &--grass {
+            @include tema($--grass)
+          }
+  
+          &--poison {
+            @include tema($--poison)
+          }
+  
+          &--fire {
+            @include tema($--fire)
+          }
+  
+          &--flying {
+            @include tema($--flying)
+          }
+  
+          &--water {
+            @include tema($--water)
+          }
+  
+          &--bug {
+            @include tema($--bug)
+          }
+  
+          &--normal {
+            @include tema($--normal)
+          }
+  
+          &--electric {
+            @include tema($--electric)
+          }
+  
+          &--ground {
+            @include tema($--ground)
+          }
+  
+          &--fairy {
+            @include tema($--fairy)
+          }
+  
+          &--fighting {
+            @include tema($--fighting)
+          }
+  
+          &--psychic {
+            @include tema($--psychic)
+          }
+  
+          &--rock {
+            @include tema($--rock)
+          }
+  
+          &--steel {
+            @include tema($--steel)
+          }
+  
+          &--ice {
+            @include tema($--ice)
+          }
+  
+          &--ghost {
+            @include tema($--ghost)
+          }
+  
+          &--dragon {
+            @include tema($--dragon)
+          }
+        } 
+      }
+    }
+
+    &__footer {
+      padding: 1rem 0;
+
+      &__link {
+        background-color: #211988;
+        padding: 0.2rem 1rem;
+        border-radius: 0.4rem;
+        color: #ffffff;
+        font-size: 1.4em;
+        text-decoration: none;
+      }
+
+      &__link:hover {
+        background-color: #362adf;
+      }
+    }
+  }
+
+  &__about {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    
+    &__container {
+      width: 60%;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    h2 {
+      padding: 2rem 0;
+      font-size: 3em;
+    }
+
+    &__gif {
+      width: 30rem;
+    }
+
+    &__header {
+      padding: 2rem;
+      font-size: 1.8em;
+    }
+
+    &__me {
+      width: 25rem;
+    }
+
+    &__main {
+      font-size: 1.4em;
+    }
+
+    &__close {
+      padding: 2rem;
+      font-size: 1.5em;
+    }
+
+    &__links {
+
+      i {
+        color: #000000;
+        font-size: 3em;
+        margin: 1rem 1rem;
+        transition: 100ms;
+      }
+
+      i:hover {
+        color: #464646;
+      }
+    }
+
+    &__link {
+      margin: 0 auto;
+      display: block;
+      text-decoration: none;
+      background-color: #1fc435;
+      color: #fff;
+      border-radius: 0.5rem;
+      width: 6rem;
+      font-size: 1.4em;
+      transition: 100ms;
+    }
+
+    &__link:hover {
+      background-color: #78c282;
     }
   }
 }

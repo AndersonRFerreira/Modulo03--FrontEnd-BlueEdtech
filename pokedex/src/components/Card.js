@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { primeiraLetra } from './Lib/utils';
+import { primeiraLetra } from '../Lib/utils';
 
 export default function Card(info) {
 
@@ -28,17 +28,19 @@ export default function Card(info) {
 
   return (
     <div className="app__list__card">
-      <Link className="app__list__card__link"to={{ pathname: "/sobre/" + pokemon.id, state: pokemon }}>
+      <Link className="app__list__card__link"to={{ pathname: "/info/" + pokemon.id, state: pokemon }}>
         <img className="app__list__card__img" src={"https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + id + ".png"} alt={pokemon.name} />
         <div className="app__list__card__info">
           <p className="app__list__card__id">{'#' + id}</p>
           <h2 className="app__list__card__name">{primeiraLetra(pokemon.name)}</h2>
           <div className="app__list__card__category">
             {
-              loading ? <span className="app__list__card__button"></span> :
+              loading ? <span className="app__list__card__category__button"></span> :
 
                 pokemon.types.map((item) => (
-                  <span key={item.type.name} className={'app__list__card__button app__list__card__button--' + item.type.name}>{primeiraLetra(item.type.name)}</span>
+                  <Link to={'/' + item.type.name}>
+                    <span key={item.type.name} className={'app__list__card__category__button app__list__card__category__button--' + item.type.name}>{primeiraLetra(item.type.name)}</span>
+                  </Link>
                 ))
             }
           </div>
